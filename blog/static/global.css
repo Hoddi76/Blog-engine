@@ -1,0 +1,40 @@
+a{
+	color:#eba613;
+}
+
+nav a, footer div a{
+	margin:0px 5px;
+}
+
+footer{
+	margin-top:40px;
+	text-align: center;
+}
+
+body{
+	font-family: Garamond, serif;
+	margin: auto;
+	padding:18px;
+	max-width: 600px;
+	font-size:18px;
+	text-align: left;
+	background-color:white;
+	position: relative;
+}
+
+#dark-button{
+	margin-bottom: 8px;
+	position: relative;
+	left: 100%;
+	transform: translateX(-100%);
+}
+
+.dark{
+	color:#f9f9f9;
+	background-color: #222;
+}
+
+img, video{
+	max-width: 600px;
+	border: 2px solid #eba613;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Name Projects</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="apple-touch-icon" sizes="180x180" href="">
+	<link rel="icon" type="image/png" sizes="32x32" href="">
+	<link rel="icon" type="image/png" sizes="16x16" href="">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='global.css') }}">
+</head>
+<body>
+	<nav>
+		<a href="/">Home</a>
+		<a href="/projects">Projects</a>
+		<a href="/blog">Blog</a>
+	</nav>
+	<footer>
+	 	<h1>
+			{% block title %}
+			{% endblock %}
+		</h1>
+	</footer>
+
+
+</body>
+</html>
