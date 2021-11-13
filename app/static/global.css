@@ -2,6 +2,10 @@ a{
 	color:#eba613;
 }
 
+nav{
+    text-align: center;
+}
+
 nav a, footer div a{
 	margin:0px 5px;
 }
