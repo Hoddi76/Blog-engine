@@ -1,0 +1,13 @@
+{% extends 'global.html' %}
+
+{% block title %}
+    hello posts
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <p>
+            {{post.title}}
+        </p>
+    {% endfor %}
+{% endblock %}
