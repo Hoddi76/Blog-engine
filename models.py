@@ -35,14 +35,21 @@ def slugify(name):
     return name.lower()
 
 
-class Post(db.Model):
+tags = db.Table('tags',
+                db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
+                db.Column('post_id', db.Integer, db.ForeignKey('post.id'))
+                )
 
+
+class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(140))
     slug = db.Column(db.String(140), unique=True)
     link_image = db.Column(db.String(200))
     body = db.Column(db.Text)
     created = db.Column(db.DateTime, default=current_timestamp())
+    tags = db.relationship('Tag', secondary=tags,
+                           backref=db.backref('posts', lazy='dynamic'))
 
     def __init__(self, *args, **kwargs):
         super(Post, self).__init__(*args, **kwargs)
@@ -54,3 +61,11 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post id: {}, title: {}>'.format(self.id, self.title)
+
+
+class Tag(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Integer, primary_key=True)
+
+    def __repr__(self):
+        return '<id: {}, name: {}>'.format(self.id, self.title)
